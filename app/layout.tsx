@@ -24,8 +24,19 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rayol.ai'),
   title: 'RAYOL AI — Operational Governance by Design™',
   description: 'Responsible AI advisory, assurance and governance for regulated enterprise and mid-market teams.',
+  icons: {
+    icon: '/rayolpng.png',
+    apple: '/rayolpng.png',
+  },
+  openGraph: {
+    title: 'RAYOL AI — Operational Governance by Design™',
+    description: 'Operational Governance by Design™ — Embedding human judgment, mathematical guardrails, and cryptographically verified audit trails into enterprise AI systems.',
+    images: [{ url: '/rayolpng.png', width: 800, height: 800, alt: 'Rayol AI' }],
+    siteName: 'Rayol AI Solutions',
+  },
 }
 
 export default function RootLayout({

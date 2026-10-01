@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -311,9 +312,12 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-black/[0.06] bg-[#fbfbfa]/90 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img 
+            <Image 
               src="/rayolpng.png" 
               alt="Rayol AI Solutions" 
+              width={32}
+              height={32}
+              priority
               className="w-8 h-8 object-contain" 
             />
             <div className="flex flex-col">
@@ -429,6 +433,7 @@ export default function Home() {
               loop 
               muted 
               playsInline 
+              preload="auto"
               className="w-full h-full object-contain scale-[1.55] mix-blend-multiply select-none"
               style={{
                 filter: 'contrast(1.08) brightness(1.02)',
@@ -665,6 +670,7 @@ export default function Home() {
               loop 
               muted 
               playsInline 
+              preload="metadata"
               className="w-full h-full object-contain pointer-events-none select-none"
               src="/about.mp4"
             />
@@ -1147,9 +1153,12 @@ export default function Home() {
                   
                   {/* Portrait Image (Refined, taste-scaled ~150px) */}
                   <div className="relative w-32 sm:w-36 lg:w-40 aspect-[4/5] rounded-xl overflow-hidden shrink-0 border border-black/[0.08] bg-zinc-900 shadow-sm">
-                    <img 
+                    <Image 
                       src={leader.image} 
                       alt={leader.name} 
+                      width={200}
+                      height={250}
+                      loading="lazy"
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
@@ -1264,9 +1273,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-black/[0.06]">
             <div>
               <div className="flex items-center gap-2.5 mb-3">
-                <img 
+                <Image 
                   src="/rayolpng.png" 
                   alt="Rayol AI Solutions" 
+                  width={28}
+                  height={28}
+                  loading="lazy"
                   className="w-7 h-7 object-contain" 
                 />
                 <span className="text-black font-bold text-sm tracking-tight">RAYOL AI SOLUTIONS LTD.</span>
